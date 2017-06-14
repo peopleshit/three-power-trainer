@@ -13,6 +13,7 @@
 		ED5CF2821EF1450B00EB2B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2801EF1450B00EB2B96 /* Main.storyboard */; };
 		ED5CF2841EF1450B00EB2B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2831EF1450B00EB2B96 /* Assets.xcassets */; };
 		ED5CF2871EF1450B00EB2B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2851EF1450B00EB2B96 /* LaunchScreen.storyboard */; };
+		ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF28E1EF147DF00EB2B96 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ED5CF2831EF1450B00EB2B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED5CF2861EF1450B00EB2B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED5CF2881EF1450B00EB2B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5CF28E1EF147DF00EB2B96 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				ED5CF2831EF1450B00EB2B96 /* Assets.xcassets */,
 				ED5CF2851EF1450B00EB2B96 /* LaunchScreen.storyboard */,
 				ED5CF2881EF1450B00EB2B96 /* Info.plist */,
+				ED5CF28E1EF147DF00EB2B96 /* Number.swift */,
 			);
 			path = "three-power-trainer";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */,
 				ED5CF27F1EF1450B00EB2B96 /* SecondViewController.swift in Sources */,
 				ED5CF27B1EF1450B00EB2B96 /* AppDelegate.swift in Sources */,
 				ED5CF27D1EF1450B00EB2B96 /* FirstViewController.swift in Sources */,
@@ -267,6 +271,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U94ZKN6L28;
 				INFOPLIST_FILE = "three-power-trainer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.peopleshit.three-power-trainer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -280,6 +285,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U94ZKN6L28;
 				INFOPLIST_FILE = "three-power-trainer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.peopleshit.three-power-trainer";
 				PRODUCT_NAME = "$(TARGET_NAME)";

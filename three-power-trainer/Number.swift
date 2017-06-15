@@ -11,27 +11,27 @@ import Foundation
 class Number {
     
     init() {
-        self.number = self.generateNumber();
+        self.number = self.generateNumber()
     }
     
-    private var number : UInt32 = 0;
+    private var number: UInt32 = 0
     
-    var getNumberToPower : String {
+    var getNumberToPower: String {
         get {
-            return String(pow(num: self.number));
+            return String(pow(num: self.number))
         }
     }
     
-    var getNumber : UInt32 {
+    var getNumber: UInt32 {
         get {
-            return self.number;
+            return self.number
         }
     }
     
     private func generateNumber() -> UInt32 {
-        var n = arc4random_uniform(100);
+        var n = arc4random_uniform(100)
         if (n == 0) {
-            n = self.generateNumber();
+            n = self.generateNumber()
         }
         return n;
     }
@@ -40,8 +40,8 @@ class Number {
         self.number = self.generateNumber();
     }
     
-    private func pow(num : UInt32) -> UInt32 {
-        let number : Double = Darwin.pow(Double(num), 3.0);
-        return UInt32(number);
+    private func pow(num: UInt32) -> UInt32 {
+        let number: Double = Darwin.pow(Double(num), 3.0)
+        return UInt32(number)
     }
 }

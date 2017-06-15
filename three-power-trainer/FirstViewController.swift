@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class FirstViewController: UIViewController {
 
@@ -100,11 +101,13 @@ class FirstViewController: UIViewController {
     
     private func incorrect() {
         numberLabelToIncorrect()
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(numberLabelToDefault), userInfo: nil, repeats: false)
     }
     
     private func timeout() {
         numberLabelToIncorrect()
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new), userInfo: nil, repeats: false)
     }
     

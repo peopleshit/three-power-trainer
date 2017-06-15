@@ -10,6 +10,9 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet var timerSlider: UISlider!
+    @IBOutlet var timerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +22,6 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

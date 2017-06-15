@@ -14,6 +14,7 @@
 		ED5CF2841EF1450B00EB2B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2831EF1450B00EB2B96 /* Assets.xcassets */; };
 		ED5CF2871EF1450B00EB2B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2851EF1450B00EB2B96 /* LaunchScreen.storyboard */; };
 		ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF28E1EF147DF00EB2B96 /* Number.swift */; };
+		ED5CF2931EF2999100EB2B96 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ED5CF2861EF1450B00EB2B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED5CF2881EF1450B00EB2B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED5CF28E1EF147DF00EB2B96 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				ED5CF2851EF1450B00EB2B96 /* LaunchScreen.storyboard */,
 				ED5CF2881EF1450B00EB2B96 /* Info.plist */,
 				ED5CF28E1EF147DF00EB2B96 /* Number.swift */,
+				ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */,
 			);
 			path = "three-power-trainer";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				ED5CF27F1EF1450B00EB2B96 /* SecondViewController.swift in Sources */,
 				ED5CF27B1EF1450B00EB2B96 /* AppDelegate.swift in Sources */,
 				ED5CF27D1EF1450B00EB2B96 /* FirstViewController.swift in Sources */,
+				ED5CF2931EF2999100EB2B96 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

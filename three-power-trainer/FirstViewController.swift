@@ -11,41 +11,113 @@ import UIKit
 class FirstViewController: UIViewController {
 
     
-    @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var answerText: UITextField!
-    private var number: Number = Number();
-    private var answer: UInt32 = 0;
-    
+    @IBOutlet var timerLabel: UILabel!
+    @IBOutlet var numberLabel: UILabel!
+    @IBOutlet var answerBox: RestrictPasteUITextField!
+    @IBOutlet var checkButton: UIButton!
+    @IBOutlet var startStopButton: UIButton!
+    private var number: Number = Number()
+    private var answer: UInt32 = 0
+    private var countdown = Timer()
+    private var answerTimer = Timer()
+    private var time = 10
+    private var state: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.number = Number()
-        self.answer = number.getNumber
-        numberLabel.text = number.getNumberToPower
-        
-        answerText.keyboardType = .numberPad;
-        // Do any additional setup after loading the view, typically from a nib.
+        checkButton.isEnabled = false
+        //answerBox.keyboardType = .numberPad;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func generateButtonPressed(_ sender: UIButton) {
-        number.newNumber()
-        numberLabel.text = number.getNumberToPower
-        answer = number.getNumber
+    @IBAction func startStopButtonPressed(_ sender: UIButton) {
+        if (state) {
+            stop()
+        }
+        else {
+            start()
+        }
     }
 
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        if (areNumbers(answerText, shouldChangeCharactersInRange: NSRange(), replacementString: "")) {
-            if (answerText.text != "empty" && UInt32(answerText.text!)! == answer) {
-                numberLabel.text = "Correct!"
+        let result = answerBox.text
+        if (areNumbers(answerBox, shouldChangeCharactersInRange: NSRange(), replacementString: "")) {
+            answerBox.text = ""
+            if (result != "" && UInt32(result!)! == answer) {
+                correct()
+            }
+            else {
+                incorrect()
             }
         }
+    }
+    
+    private func stop() {
+        state = false
+        checkButton.isEnabled = false
+        numberLabel.text = "0"
+        countdown.invalidate()
+        timerLabel.text = "Time: 0"
+        startStopButton.setTitle("Start", for: .normal)
+        
+    }
+    
+    @objc private func timerTick() {
+        time -= 1
+        timerLabel.text = "Time: " + String(time)
+        if (time == 0) {
+            countdown.invalidate()
+            timeout()
+        }
+    }
+    
+    @objc private func new() {
+        number.newNumber()
+        numberLabel.textColor = UIColor.black
+        numberLabel.text = number.getNumberToPower
+        answer = number.getNumber
+        timerLabel.text = "Time: 10"
+        time = 10
+        countdown = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+    }
+    
+    private func start() {
+        new()
+        state = true
+        checkButton.isEnabled = true
+        startStopButton.setTitle("Stop", for: .normal)
+    }
+    
+    private func correct() {
+        numberLabel.text = "Correct!"
+        countdown.invalidate()
+        answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new), userInfo: nil, repeats: false)
+    }
+    
+    private func incorrect() {
+        numberLabelToIncorrect()
+        answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(numberLabelToDefault), userInfo: nil, repeats: false)
+    }
+    
+    private func timeout() {
+        numberLabelToIncorrect()
+        answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new), userInfo: nil, repeats: false)
+    }
+    
+    private func numberLabelToIncorrect() {
+        numberLabel.textColor = UIColor.red
+        numberLabel.text = "Incorrect!"
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+    }
+    
+    @objc private func numberLabelToDefault() {
+        numberLabel.textColor = UIColor.black
+        numberLabel.text = number.getNumberToPower
     }
     
     private func areNumbers(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

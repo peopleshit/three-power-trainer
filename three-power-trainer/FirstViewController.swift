@@ -24,6 +24,8 @@ class FirstViewController: UIViewController {
     private var time: UInt32 = 0
     private let settings: Settings = Settings.instance
     private var state: Bool = false
+    private var startTime: CFAbsoluteTime = 0
+    private var results = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +88,9 @@ class FirstViewController: UIViewController {
         numberLabel.text = number.getNumberToPower
         answer = number.getNumber
         timerLabel.text = "Time: " + settings.stringTime
-        time = 10
+        time = settings.time
         countdown = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+        startTime = CFAbsoluteTimeGetCurrent()
     }
     
     private func start() {
@@ -101,22 +104,31 @@ class FirstViewController: UIViewController {
     private func correct() {
         numberLabel.text = "Correct!"
         countdown.invalidate()
+        addResult()
         answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new), userInfo: nil, repeats: false)
     }
     
     private func incorrect() {
         numberLabelToIncorrect()
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(numberLabelToDefault), userInfo: nil, repeats: false)
     }
     
     private func timeout() {
         numberLabelToIncorrect()
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        addResult()
         answerTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new), userInfo: nil, repeats: false)
     }
     
+    private func getTime() -> Double {
+        return Double(CFAbsoluteTimeGetCurrent() - startTime)
+    }
+    
+    private func addResult() {
+        results.append(Result(result: getTime(), number: answer, time: settings.time))
+    }
+    
     private func numberLabelToIncorrect() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         numberLabel.textColor = UIColor.red
         numberLabel.text = "Incorrect!"
         let generator = UIImpactFeedbackGenerator(style: .heavy)

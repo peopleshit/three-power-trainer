@@ -16,6 +16,7 @@
 		ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF28E1EF147DF00EB2B96 /* Number.swift */; };
 		ED5CF2931EF2999100EB2B96 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */; };
 		EDE61B391EF3E27D008EAF87 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE61B381EF3E27D008EAF87 /* Settings.swift */; };
+		EDE61B3B1EF432B4008EAF87 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE61B3A1EF432B4008EAF87 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		ED5CF28E1EF147DF00EB2B96 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EDE61B381EF3E27D008EAF87 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EDE61B3A1EF432B4008EAF87 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				ED5CF2881EF1450B00EB2B96 /* Info.plist */,
 				ED5CF28E1EF147DF00EB2B96 /* Number.swift */,
 				ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */,
+				EDE61B3A1EF432B4008EAF87 /* Result.swift */,
 			);
 			path = "three-power-trainer";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */,
 				ED5CF27F1EF1450B00EB2B96 /* SecondViewController.swift in Sources */,
 				ED5CF27B1EF1450B00EB2B96 /* AppDelegate.swift in Sources */,
+				EDE61B3B1EF432B4008EAF87 /* Result.swift in Sources */,
 				ED5CF27D1EF1450B00EB2B96 /* FirstViewController.swift in Sources */,
 				ED5CF2931EF2999100EB2B96 /* CustomTextField.swift in Sources */,
 			);

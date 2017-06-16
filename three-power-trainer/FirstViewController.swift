@@ -21,12 +21,14 @@ class FirstViewController: UIViewController {
     private var answer: UInt32 = 0
     private var countdown = Timer()
     private var answerTimer = Timer()
-    private var time = 10
+    private var time: UInt32 = 0
+    private let settings: Settings = Settings.instance
     private var state: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.number = Number()
+        time = settings.time
         checkButton.isEnabled = false
         //answerBox.keyboardType = .numberPad;
     }
@@ -62,7 +64,7 @@ class FirstViewController: UIViewController {
         checkButton.isEnabled = false
         numberLabel.text = "0"
         countdown.invalidate()
-        timerLabel.text = "Time: 0"
+        timerLabel.text = "Time: " + settings.stringTime
         startStopButton.setTitle("Start", for: .normal)
         
     }
@@ -81,7 +83,7 @@ class FirstViewController: UIViewController {
         numberLabel.textColor = UIColor.black
         numberLabel.text = number.getNumberToPower
         answer = number.getNumber
-        timerLabel.text = "Time: 10"
+        timerLabel.text = "Time: " + settings.stringTime
         time = 10
         countdown = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
     }
@@ -90,6 +92,7 @@ class FirstViewController: UIViewController {
         new()
         state = true
         checkButton.isEnabled = true
+        time = settings.time
         startStopButton.setTitle("Stop", for: .normal)
     }
     

@@ -15,6 +15,7 @@
 		ED5CF2871EF1450B00EB2B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5CF2851EF1450B00EB2B96 /* LaunchScreen.storyboard */; };
 		ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF28E1EF147DF00EB2B96 /* Number.swift */; };
 		ED5CF2931EF2999100EB2B96 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */; };
+		EDE61B391EF3E27D008EAF87 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE61B381EF3E27D008EAF87 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ED5CF2881EF1450B00EB2B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED5CF28E1EF147DF00EB2B96 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		ED5CF2921EF2999100EB2B96 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EDE61B381EF3E27D008EAF87 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				ED5CF27A1EF1450B00EB2B96 /* AppDelegate.swift */,
+				EDE61B381EF3E27D008EAF87 /* Settings.swift */,
 				ED5CF27C1EF1450B00EB2B96 /* FirstViewController.swift */,
 				ED5CF27E1EF1450B00EB2B96 /* SecondViewController.swift */,
 				ED5CF2801EF1450B00EB2B96 /* Main.storyboard */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE61B391EF3E27D008EAF87 /* Settings.swift in Sources */,
 				ED5CF28F1EF147DF00EB2B96 /* Number.swift in Sources */,
 				ED5CF27F1EF1450B00EB2B96 /* SecondViewController.swift in Sources */,
 				ED5CF27B1EF1450B00EB2B96 /* AppDelegate.swift in Sources */,
@@ -316,6 +320,7 @@
 				ED5CF28D1EF1450B00EB2B96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -30,7 +30,9 @@ class FirstViewController: UIViewController {
         self.number = Number()
         time = settings.time
         checkButton.isEnabled = false
-        //answerBox.keyboardType = .numberPad;
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(self.didTapView))
+        self.view.addGestureRecognizer(tapRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,6 +131,10 @@ class FirstViewController: UIViewController {
     private func areNumbers(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let invalidChars = CharacterSet(charactersIn: "0123456789").inverted
         return string.rangeOfCharacter(from: invalidChars, options: [], range: string.startIndex ..< string.endIndex) == nil
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
     }
 }
 
